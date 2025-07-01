@@ -1,0 +1,40 @@
+<svg width="1920" height="573" viewBox="0 0 1920 573" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Путь движения -->
+  <path id="motionPath" d="M-45 121.787L60.3447 144.715C103.07 154.014 143.674 171.236 180.056 195.491L215.73 219.274C237.181 233.574 257.034 250.138 274.947 268.68L304.64 299.415C342.549 338.654 371.119 385.714 400.151 431.909C410.871 448.967 423.141 465.667 436 477.787C467.389 507.373 489.382 521.268 530 535.787C585.973 555.795 624.346 558.258 682 543.787C724.348 533.157 747.958 521.128 782 493.787C842.922 444.857 879 318.787 879 318.787C879 318.787 993.978 225.509 1050 158.787C1055.26 152.528 1062.38 143.925 1070.31 134.304C1114.05 81.2296 1171.3 39.0473 1238.9 26.387C1263.91 21.7014 1288.73 18.8473 1307 20.7869C1366.44 27.0959 1403.15 30.0588 1455 59.7869C1503.4 87.536 1522.11 116.075 1558 158.787C1613.2 224.469 1602.57 294.734 1670 347.787C1705.55 375.76 1731.74 382.251 1773 400.787C1817.99 420.995 1843.96 430.982 1891 445.787C1945.03 462.79 2032 479.787 2032 479.787"
+    stroke="#D0D4DC" stroke-dasharray="8 8" fill="none" />
+
+  <defs>
+    <!-- Центрированная стрелка -->
+    <g id="movingArrow">
+		<g transform="rotate(-30) translate(6, 0)">
+		  <path d="M-18.779 16.558L19.957 17.481L-0.266 -15.477L-4.459 3.372L-18.779 16.558Z" fill="#45AC34" />
+		</g>
+	</g>
+  </defs>
+
+  <g>
+    <use href="#movingArrow">
+      <animateMotion dur="10s" repeatCount="indefinite" rotate="auto">
+        <mpath href="#motionPath" />
+      </animateMotion>
+    </use>
+
+    <use href="#movingArrow">
+      <animateMotion begin="2s" dur="10s" repeatCount="indefinite" rotate="auto">
+        <mpath href="#motionPath" />
+      </animateMotion>
+    </use>
+
+    <use href="#movingArrow">
+      <animateMotion begin="4s" dur="10s" repeatCount="indefinite" rotate="auto">
+        <mpath href="#motionPath" />
+      </animateMotion>
+    </use>
+
+    <use href="#movingArrow">
+      <animateMotion begin="6s" dur="10s" repeatCount="indefinite" rotate="auto">
+        <mpath href="#motionPath" />
+      </animateMotion>
+    </use>
+  </g>
+</svg>
