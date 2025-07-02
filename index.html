@@ -6,17 +6,17 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap&_v=20250702012158" rel="stylesheet">
-   <link rel="stylesheet" href="files/swiper/css/swiper-bundle.min.css?_v=20250702012158">
-   <link rel="stylesheet" href="files/phonecode-master/phonecode.css?_v=20250702012158">
-   <link rel="stylesheet" href="css/style.min.css?_v=20250702012158">
-   <title> - </title>
+   <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap&_v=20250702171425" rel="stylesheet">
+   <link rel="stylesheet" href="files/swiper/css/swiper-bundle.min.css?_v=20250702171425">
+   <link rel="stylesheet" href="files/phonecode-master/phonecode.css?_v=20250702171425">
+   <link rel="stylesheet" href="css/style.min.css?_v=20250702171425">
+   <title>Головна - Digital агенство повного циклу</title>
 </head>
 
 <body>
 	<div class="wrapper">
-		<header class="header">
-	<div class="header__wrapper lock-padding">
+		<header class="header lock-padding">
+	<div class="header__wrapper">
 		<div id="header-container" class="n_container header-container">
 			<div class="header__blockLogo">
 				<a href="/"><img src="images/svg/logo.svg" alt=""></a>
@@ -651,7 +651,7 @@
 						<div data-da="js-reviews-container, 3, 860" class="reviews__headRight">
 							<div class="reviews__headWrapButtons">
 								<div class="wrap-button">
-									<a href="#" class="n_btn">НАПИСАТИ ВІДГУК</a>
+									<a href="#add-review" class="popup-link n_btn">НАПИСАТИ ВІДГУК</a>
 								</div>
 								<div class="wrap-custom-buttons-swiper">
 									<div id="reviews-swiper-btn-prev" class="swiper-button-prev">
@@ -1236,6 +1236,65 @@
 			</div>
 		</div>
 
+		<div id="add-review" class="popup">
+			<div class="popup__body">
+				<div class="popup__content">
+					<a href="" class="popup__close close-popup">
+						<img src="images/svg/close-popup-icon.svg" alt="">
+					</a>
+					<div class="popup__block lets-start-your-project">
+						<form>
+							<div class="popup-wrap-field">
+								<input type="text" placeholder="Заголовок*" name="review-title" required>
+							</div>
+							<div class="popup-wrap-field textarea">
+								<textarea placeholder="Текст відгуку*" name="review-text"></textarea>
+							</div>
+							<div class="popup-wrap-field">
+								<input type="text" placeholder="ПІБ*" name="review-first-last-name" required>
+							</div>
+							<div class="popup-wrap-field">
+								<input type="text" placeholder="Назва підприємства*" name="review-company-name" required>
+							</div>
+							<div class="popup-wrap-field">
+								<input type="text" placeholder="Ваша посада*" name="review-position" required>
+							</div>
+							<div class="popup-wrap-fields-file">
+								<label>
+									<input type="file" name="review-photo" title="">
+									Завантажити фото
+									<svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M10.5007 12.9791C10.3895 12.9791 10.2854 12.9619 10.1882 12.9274C10.0909 12.893 10.0007 12.8338 9.91732 12.7499L6.91732 9.74992C6.75065 9.58325 6.67065 9.38881 6.67732 9.16659C6.68398 8.94437 6.76398 8.74992 6.91732 8.58325C7.08398 8.41659 7.28204 8.32992 7.51148 8.32325C7.74093 8.31659 7.93871 8.39631 8.10482 8.56242L9.66732 10.1249V4.16659C9.66732 3.93048 9.74732 3.7327 9.90732 3.57325C10.0673 3.41381 10.2651 3.33381 10.5007 3.33325C10.7362 3.3327 10.9343 3.4127 11.0948 3.57325C11.2554 3.73381 11.3351 3.93159 11.334 4.16659V10.1249L12.8965 8.56242C13.0632 8.39575 13.2612 8.31575 13.4907 8.32242C13.7201 8.32909 13.9179 8.41603 14.084 8.58325C14.2368 8.74992 14.3168 8.94437 14.324 9.16659C14.3312 9.38881 14.2512 9.58325 14.084 9.74992L11.084 12.7499C11.0007 12.8333 10.9104 12.8924 10.8132 12.9274C10.7159 12.9624 10.6118 12.9796 10.5007 12.9791ZM5.50065 16.6666C5.04232 16.6666 4.6501 16.5035 4.32398 16.1774C3.99787 15.8513 3.83454 15.4588 3.83398 14.9999V13.3333C3.83398 13.0971 3.91398 12.8994 4.07398 12.7399C4.23398 12.5805 4.43176 12.5005 4.66732 12.4999C4.90287 12.4994 5.10093 12.5794 5.26148 12.7399C5.42204 12.9005 5.50176 13.0983 5.50065 13.3333V14.9999H15.5007V13.3333C15.5007 13.0971 15.5807 12.8994 15.7407 12.7399C15.9007 12.5805 16.0984 12.5005 16.334 12.4999C16.5695 12.4994 16.7676 12.5794 16.9282 12.7399C17.0887 12.9005 17.1684 13.0983 17.1673 13.3333V14.9999C17.1673 15.4583 17.0043 15.8508 16.6782 16.1774C16.352 16.5041 15.9595 16.6671 15.5007 16.6666H5.50065Z" fill="white"/>
+									</svg>
+								</label>
+								<label>
+									<input type="file" name="review-photo" title="">
+									Завантажити логотип
+									<svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M10.5007 12.9791C10.3895 12.9791 10.2854 12.9619 10.1882 12.9274C10.0909 12.893 10.0007 12.8338 9.91732 12.7499L6.91732 9.74992C6.75065 9.58325 6.67065 9.38881 6.67732 9.16659C6.68398 8.94437 6.76398 8.74992 6.91732 8.58325C7.08398 8.41659 7.28204 8.32992 7.51148 8.32325C7.74093 8.31659 7.93871 8.39631 8.10482 8.56242L9.66732 10.1249V4.16659C9.66732 3.93048 9.74732 3.7327 9.90732 3.57325C10.0673 3.41381 10.2651 3.33381 10.5007 3.33325C10.7362 3.3327 10.9343 3.4127 11.0948 3.57325C11.2554 3.73381 11.3351 3.93159 11.334 4.16659V10.1249L12.8965 8.56242C13.0632 8.39575 13.2612 8.31575 13.4907 8.32242C13.7201 8.32909 13.9179 8.41603 14.084 8.58325C14.2368 8.74992 14.3168 8.94437 14.324 9.16659C14.3312 9.38881 14.2512 9.58325 14.084 9.74992L11.084 12.7499C11.0007 12.8333 10.9104 12.8924 10.8132 12.9274C10.7159 12.9624 10.6118 12.9796 10.5007 12.9791ZM5.50065 16.6666C5.04232 16.6666 4.6501 16.5035 4.32398 16.1774C3.99787 15.8513 3.83454 15.4588 3.83398 14.9999V13.3333C3.83398 13.0971 3.91398 12.8994 4.07398 12.7399C4.23398 12.5805 4.43176 12.5005 4.66732 12.4999C4.90287 12.4994 5.10093 12.5794 5.26148 12.7399C5.42204 12.9005 5.50176 13.0983 5.50065 13.3333V14.9999H15.5007V13.3333C15.5007 13.0971 15.5807 12.8994 15.7407 12.7399C15.9007 12.5805 16.0984 12.5005 16.334 12.4999C16.5695 12.4994 16.7676 12.5794 16.9282 12.7399C17.0887 12.9005 17.1684 13.0983 17.1673 13.3333V14.9999C17.1673 15.4583 17.0043 15.8508 16.6782 16.1774C16.352 16.5041 15.9595 16.6671 15.5007 16.6666H5.50065Z" fill="white"/>
+									</svg>
+								</label>
+							</div>
+							<div class="wrap-button">
+								<input type="submit" class="n_btn" value="ДОДАТИ ВІДГУК">
+							</div>
+						</form>
+					</div>
+					<div class="popup__thank-you hidden">
+						<div class="wrap-icon">
+							<img src="images/svg/smile.svg" alt="">
+						</div>
+						<h4>Дякуємо за ваш<br> відгук</h4>
+						<div class="wrap-button">
+							<a href="/" class="n_btn">НА ГОЛОВНУ <img src="images/svg/popup-thank-you-arrow-button.svg" alt=""></a>
+						</div>
+						<img class="popup__thank-you-arrow" src="images/svg/popup-thank-you-arrow.svg" alt="">
+						<img class="popup__thank-you-arrows" src="images/svg/popup-thank-you-arrows.svg" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<footer class="footer">
    <div class="n_container">
       <div class="footer__items">
@@ -1397,7 +1456,7 @@
    </div>
 </footer>
 
-<ul class="social-widget">
+<ul class="social-widget lock-padding">
    <li>
       <a href="#" target="_blank">
          <picture>
@@ -1445,20 +1504,20 @@
    </li>
 </ul>
 	</div>
-   <script src="js/script.min.js?_v=20250702012158"></script>
-	<script src="files/js/counters.js?_v=20250702012158"></script>
-	<script src="files/swiper/js/swiper-bundle.min.js?_v=20250702012158"></script>
-	<script src="files/swiper/js/init.js?_v=20250702012158"></script>
-	<script src="files/js/js-code-to-replace-img-with-svg.js?_v=20250702012158"></script>
+   <script src="js/script.min.js?_v=20250702171425"></script>
+	<script src="files/js/counters.js?_v=20250702171425"></script>
+	<script src="files/swiper/js/swiper-bundle.min.js?_v=20250702171425"></script>
+	<script src="files/swiper/js/init.js?_v=20250702171425"></script>
+	<script src="files/js/js-code-to-replace-img-with-svg.js?_v=20250702171425"></script>
 
-	<script src="files/js/jquery-3.6.1.min.js?_v=20250702012158"></script>
-	<script src="files/js/marquee/jquery.marquee.min.js?_v=20250702012158"></script>
-	<script src="files/js/marquee/init.js?_v=20250702012158"></script>
+	<script src="files/js/jquery-3.6.1.min.js?_v=20250702171425"></script>
+	<script src="files/js/marquee/jquery.marquee.min.js?_v=20250702171425"></script>
+	<script src="files/js/marquee/init.js?_v=20250702171425"></script>
 
-   <script src="files/phonecode-master/phonecode.js?_v=20250702012158"></script>
-   <script src="files/phonecode-master/jquery-ui-1.10.4.custom.min.js?_v=20250702012158"></script>
-   <script src="files/phonecode-master/counties.js?_v=20250702012158"></script>
-   <script src="files/phonecode-master/phonecode.js?_v=20250702012158"></script>
+   <script src="files/phonecode-master/phonecode.js?_v=20250702171425"></script>
+   <script src="files/phonecode-master/jquery-ui-1.10.4.custom.min.js?_v=20250702171425"></script>
+   <script src="files/phonecode-master/counties.js?_v=20250702171425"></script>
+   <script src="files/phonecode-master/phonecode.js?_v=20250702171425"></script>
    <script>
       $(function(){
          $('#phone').phonecode({
