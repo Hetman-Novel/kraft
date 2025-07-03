@@ -150,6 +150,57 @@ if (reviewsSlider) {
 }
 /* <- Reviews slider */
 
+/* be-a-partner slider -> */
+let swiperInstance3 = null;
+const breakpoint3 = 640;
+const slider3 = document.getElementById('be-a-partner');
+
+function initOrDestroySlider3() {
+   const screenWidth = Math.min(window.innerWidth, window.innerHeight); // учитываем ориентацию
+
+   if (screenWidth <= breakpoint3 && !swiperInstance3 && slider3) {
+      
+      swiperInstance3 = new Swiper(slider3, {
+         navigation: {
+            prevEl: '#be-a-partner-button-prev',
+            nextEl: '#be-a-partner-button-next',
+         },
+         pagination: {
+            el: '#be-a-partner-pagination',
+            clickable: true,
+         },
+         centeredSlides: true,
+         autoHeight: false,
+         slidesPerView: 1.14,
+         slidesPerGroup: 1,
+         watchOverflow: true,
+         spaceBetween: 20,
+         loop: true,
+         speed: 1000,
+         effect: 'slide',
+         preloadImages: false,
+         lazy: {
+            loadOnTransitionStart: true,
+            loadPrewNext: true,
+         },
+         watchSlidesProgress: true,
+         watchSlidesVisibility: true,
+      });
+   }
+
+   if (screenWidth > breakpoint3 && swiperInstance3) {
+      swiperInstance3.destroy(true, true);
+      swiperInstance3 = null;
+   }
+}
+
+// запустить при загрузке
+window.addEventListener('load', initOrDestroySlider3);
+// пересчитывать при изменении размера или ориентации
+window.addEventListener('resize', initOrDestroySlider3);
+window.addEventListener('orientationchange', initOrDestroySlider3);
+/* <- be-a-partner slider */
+
 /* We are in numbers slider -> */
 let swiperInstance = null;
 const breakpoint = 640;
