@@ -1848,6 +1848,30 @@ body.lock {
   width: 254px;
 }
 
+#become-a-partner .popup__body.success .become-a-partner__block {
+  display: none;
+}
+
+#become-a-partner .popup__body.success .popup__thank-you.hidden {
+  display: block;
+}
+
+#become-a-partner .popup__body:not(.success) {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#become-a-partner .popup__body:not(.success) .popup__content {
+  padding: 55px;
+  width: 1317px;
+}
+
+#become-a-partner .popup__body:not(.success) .popup__close {
+  right: 0;
+  top: 0;
+  z-index: 3;
+}
+
 /* n Classes */
 
 /* Header */
@@ -6852,6 +6876,11 @@ body._touch .header .menu__list > li._active .menu__arrow {
     padding-bottom: 21px;
   }
 
+  #become-a-partner .popup__body:not(.success) .popup__close {
+    right: 30px;
+    top: 30px;
+  }
+
   .reviews__slider {
     margin-left: -40px;
     margin-right: -40px;
@@ -6974,6 +7003,17 @@ body._touch .header .menu__list > li._active .menu__arrow {
 }
 
 @media screen and (max-width: 1200px) {
+  #become-a-partner .popup__body:not(.success) .popup__content {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+  }
+
+  #become-a-partner .popup__body:not(.success) .popup__close {
+    right: 15px;
+    top: 20px;
+  }
+
   .header__right {
     padding-left: 20px;
   }
