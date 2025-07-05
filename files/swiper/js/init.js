@@ -106,6 +106,67 @@ window.addEventListener('resize', initOrDestroySlider2);
 window.addEventListener('orientationchange', initOrDestroySlider2);
 /* <- Cases slider */
 
+/* Other cases slider -> */
+const otherCasesSlider = document.getElementById('other-cases-slider');
+if (otherCasesSlider) {
+   new Swiper(otherCasesSlider, {
+      navigation: {
+         prevEl: [document.getElementById('other-cases-swiper-btn-prev'), document.getElementById('other-cases-swiper-btn-mobile-prev')],
+         nextEl: [document.getElementById('other-cases-swiper-btn-next'), document.getElementById('other-cases-swiper-btn-mobile-next')],
+      },
+      pagination: {
+         el: '#other-cases-swiper-pagination',
+         clickable: true,
+      },
+      autoHeight: false,
+      slidesPerView: 3,
+      slidesPerGroup: 1,
+      watchOverflow: true,
+      spaceBetween: 30,
+      loop: false,
+      speed: 1000,
+      effect: 'slide',
+      centeredSlides: false,
+      breakpoints: {
+         0: {
+            slidesPerView: 1.10,
+            slidesPerGroup: 1,
+            spaceBetween: 20,
+            centeredSlides: true,
+            loop: true,
+         },
+         481: {
+            slidesPerView: 1.10,
+            slidesPerGroup: 1,
+            spaceBetween: 20,
+            centeredSlides: true,
+            loop: true,
+         },
+         768: {
+            slidesPerView: 2,
+            slidesPerGroup: 1,
+            spaceBetween: 30,
+            centeredSlides: false,
+            loop: false,
+         },
+         1100: {
+            slidesPerView: 3,
+            slidesPerGroup: 1,
+            centeredSlides: false,
+            loop: false,
+         }
+      },
+      preloadImages: false,
+      lazy: {
+         loadOnTransitionStart: false,
+         loadPrewNext: false,
+      },
+      watchSlidesProgress: true,
+      watchSlidesVisibility: true,
+   });
+}
+/* <- Other cases slider */
+
 /* Reviews slider -> */
 const reviewsSlider = document.getElementById('reviews-slider');
 if (reviewsSlider) {
@@ -251,3 +312,33 @@ window.addEventListener('load', initOrDestroySlider);
 window.addEventListener('resize', initOrDestroySlider);
 window.addEventListener('orientationchange', initOrDestroySlider);
 /* <- We are in numbers slider */
+
+/* Realization slider -> */
+const realizationSlider = document.getElementById('realization-slider');
+if (realizationSlider) {
+   new Swiper(realizationSlider, {
+      navigation: {
+         prevEl: [document.getElementById('d-realization-button-prev'), document.getElementById('realization-swiper-btn-prev')],
+         nextEl: [document.getElementById('d-realization-button-next'), document.getElementById('realization-swiper-btn-next')],
+      },
+      autoHeight: false,
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      watchOverflow: true,
+      spaceBetween: 50,
+      loop: false,
+      speed: 1000,
+      effect: 'fade',
+      fadeEffect: {
+         crossFade: true
+      },
+      preloadImages: false,
+      lazy: {
+         loadOnTransitionStart: false,
+         loadPrewNext: false,
+      },
+      watchSlidesProgress: true,
+      watchSlidesVisibility: true,
+   });
+}
+/* <- Realization slider */
