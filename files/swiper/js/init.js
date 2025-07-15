@@ -342,3 +342,43 @@ if (realizationSlider) {
    });
 }
 /* <- Realization slider */
+
+/* Google rewiews slider -> */
+const googleRewiewsSlider = document.getElementById('google-rewiews-slider');
+if (googleRewiewsSlider) {
+   new Swiper(googleRewiewsSlider, {
+      navigation: {
+         prevEl: '#google-rewiews-btn-prev',
+         nextEl: '#google-rewiews-btn-next',
+      },
+      autoHeight: false,
+      slidesPerView: 3,
+      slidesPerGroup: 1,
+      watchOverflow: true,
+      spaceBetween: 23,
+      loop: false,
+      speed: 1000,
+      effect: 'slide',
+      breakpoints: {
+         0: {
+            slidesPerView: 1.12,
+            spaceBetween: 14,
+            initialSlide: 1,
+            centeredSlides: true,
+         },
+         768: {
+            slidesPerView: 1.08,
+            spaceBetween: 18,
+            initialSlide: 1,
+            centeredSlides: true,
+         },
+         1025: {
+            slidesPerView: 3,
+            spaceBetween: 23,
+            initialSlide: 0,
+            centeredSlides: false,
+         }
+      },
+   });
+}
+/* <- Google rewiews slider */
