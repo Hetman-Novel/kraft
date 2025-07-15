@@ -6,11 +6,11 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap&_v=20250706222030" rel="stylesheet">
-   <link rel="stylesheet" href="files/swiper/css/swiper-bundle.min.css?_v=20250706222030">
-   <link rel="stylesheet" href="files/phonecode-master/phonecode.css?_v=20250706222030">
-   <link rel="stylesheet" href="files/fancybox/fancybox.css?_v=20250706222030">
-   <link rel="stylesheet" href="css/style.min.css?_v=20250706222030">
+   <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap&_v=20250715173741" rel="stylesheet">
+   <link rel="stylesheet" href="files/swiper/css/swiper-bundle.min.css?_v=20250715173741">
+   <link rel="stylesheet" href="files/phonecode-master/phonecode.css?_v=20250715173741">
+   <link rel="stylesheet" href="files/fancybox/fancybox.css?_v=20250715173741">
+   <link rel="stylesheet" href="css/style.min.css?_v=20250715173741">
    <title>Головна - Digital агенство повного циклу</title>
 </head>
 
@@ -805,12 +805,11 @@
 					<div id="reviews-swiper-pagination" class="swiper-pagination custom-swiper-pagination"></div>
 
 					<div class="wrap-google-reviews">
-						<!--Тут будуть відгуки з Google-->
-						<div class="google-reviews">
-							<div class="google-review"></div>
-							<div class="google-review"></div>
-							<div class="google-review"></div>
+						<div id="google-rewiews-slider" class="swiper-conteiner">
+							<div id="greviews" class="swiper-wrapper">Завантаження відгуків...</div>
 						</div>
+						<div id="google-rewiews-btn-prev" class="swiper-button-prev"></div>
+						<div id="google-rewiews-btn-next" class="swiper-button-next"></div>
 					</div>
 
 				</div>
@@ -1509,20 +1508,20 @@
    </li>
 </ul>
 	</div>
-   <script src="js/script.min.js?_v=20250706222030"></script>
-	<script src="files/js/counters.js?_v=20250706222030"></script>
-	<script src="files/swiper/js/swiper-bundle.min.js?_v=20250706222030"></script>
-	<script src="files/swiper/js/init.js?_v=20250706222030"></script>
-	<script src="files/js/js-code-to-replace-img-with-svg.js?_v=20250706222030"></script>
+   <script src="js/script.min.js?_v=20250715173741"></script>
+	<script src="files/js/counters.js?_v=20250715173741"></script>
+	<script src="files/swiper/js/swiper-bundle.min.js?_v=20250715173741"></script>
+	<script src="files/swiper/js/init.js?_v=20250715173741"></script>
+	<script src="files/js/js-code-to-replace-img-with-svg.js?_v=20250715173741"></script>
 
-	<script src="files/js/jquery-3.6.1.min.js?_v=20250706222030"></script>
-	<script src="files/js/marquee/jquery.marquee.min.js?_v=20250706222030"></script>
-	<script src="files/js/marquee/init.js?_v=20250706222030"></script>
+	<script src="files/js/jquery-3.6.1.min.js?_v=20250715173741"></script>
+	<script src="files/js/marquee/jquery.marquee.min.js?_v=20250715173741"></script>
+	<script src="files/js/marquee/init.js?_v=20250715173741"></script>
 
-   <script src="files/phonecode-master/phonecode.js?_v=20250706222030"></script>
-   <script src="files/phonecode-master/jquery-ui-1.10.4.custom.min.js?_v=20250706222030"></script>
-   <script src="files/phonecode-master/counties.js?_v=20250706222030"></script>
-   <script src="files/phonecode-master/phonecode.js?_v=20250706222030"></script>
+   <script src="files/phonecode-master/phonecode.js?_v=20250715173741"></script>
+   <script src="files/phonecode-master/jquery-ui-1.10.4.custom.min.js?_v=20250715173741"></script>
+   <script src="files/phonecode-master/counties.js?_v=20250715173741"></script>
+   <script src="files/phonecode-master/phonecode.js?_v=20250715173741"></script>
    <script>
       $(function(){
          $('#phone').phonecode({
@@ -1532,7 +1531,75 @@
             placeholder: '(99) 999-99-99'
          });
       });
-  </script>
+   </script>
+
+	<script>
+		function initReadMoreBtns() {
+			const gReviewsBtns_readmore = document.querySelectorAll('.btn-readmore');
+			if (gReviewsBtns_readmore.length > 0) {
+				gReviewsBtns_readmore.forEach(gReviewsBtn_readmore => {
+					gReviewsBtn_readmore.addEventListener('click', function (e) {
+						e.preventDefault();
+						this.parentNode.classList.toggle("row-limit");
+					});
+				});
+			}
+		}
+
+		function formatDateFull(time) {
+			const date = new Date(time * 1000);
+			const options = { year: 'numeric', month: 'long', day: 'numeric' };
+			return date.toLocaleDateString('en-US', options);
+		}
+
+		function initMap() {
+			const map = new google.maps.Map(document.createElement('div'));
+			const service = new google.maps.places.PlacesService(map);
+
+			service.getDetails({
+				placeId: 'ChIJe3-iyVBbLUcRi3J7Eer55-I',
+				fields: ['name', 'rating', 'reviews']
+			}, (place, status) => {
+				const container = document.getElementById('greviews');
+				container.innerHTML = '';
+
+				if (status === google.maps.places.PlacesServiceStatus.OK && place.reviews) {
+					place.reviews.forEach(review => {
+						const div = document.createElement('div');
+						div.className = 'google-review swiper-slide';
+						div.innerHTML = `
+							<div class="google-review__line">
+								<div class="google-review__wrap-photo">
+									${review.profile_photo_url ? `<img src="${review.profile_photo_url}" alt="Avatar">` : ''}
+               				<div class="swiper-lazy-preloader"></div>
+								</div>
+								<div class="google-review__wrap-name-and-date">
+									<h3>${review.author_name}</h3>
+									<p>${formatDateFull(review.time)}</p>
+								</div>
+							</div>
+							<div class="google-review__rating">
+								${'★'.repeat(review.rating)}
+							</div>
+							<div class="wrap-block-text row-limit">
+								<div class="review-text block-text">
+									<p>${review.text}</p>
+								</div>
+								<a href="#" class="btn-readmore">
+									<span class="readmore">Читати більше</span>
+									<span class="close">Згорнути</span>
+								</a>
+							</div>`;
+						container.appendChild(div);
+					});
+					initReadMoreBtns(); // Важно! Инициализируем кнопки после вывода отзывов
+				} else {
+					container.innerText = 'Відгуки не знайдені або виникла помилка.';
+				}
+			});
+		}
+	</script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTUcDaOAof_HlU_ld0iF0TxF0VxiOD7Sc&libraries=places&callback=initMap&_v=20250715173741"></script>
 
 </body>
 </html>
