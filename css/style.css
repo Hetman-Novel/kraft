@@ -1891,7 +1891,7 @@ body.lock {
 
 .header {
   left: 0;
-  position: fixed;
+  position: absolute;
   right: 0;
   top: 43px;
   width: 100%;
